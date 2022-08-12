@@ -11,11 +11,7 @@ def _parse_results(r):
     return [x for x in r if len(x) > 0]
 
 def _label(num_part):
-    if num_part == 1:
-        label = "MinHash LSH"
-    else:
-        label = "LSH Ensemble ({})".format(num_part)
-    return label
+    return "MinHash LSH" if num_part == 1 else f"LSH Ensemble ({num_part})"
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
